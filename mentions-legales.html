@@ -6,13 +6,14 @@
   <title>Mentions légales — Rosso, Seseh Bali</title>
   <meta name="description" content="Mentions légales du site Rosso Café — Seseh, Bali." />
   <meta name="robots" content="noindex,follow" />
+  <link rel="alternate" hreflang="en" href="legal-notice.html" />
   <link rel="icon" type="image/png" href="assets/img/logo-circle-red.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=DM+Sans:wght@400;500;700&family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="legal-body">
+<body class="legal-body" data-en-href="legal-notice.html">
 
   <header class="nav nav-static">
     <a href="index.html" class="nav-logo">
@@ -24,7 +25,13 @@
       <a href="index.html#vibes">Vibes</a>
       <a href="index.html#visit">Visit</a>
     </nav>
-    <a href="index.html#visit" class="nav-cta">Book a table</a>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+      </div>
+      <a href="index.html#visit" class="nav-cta">Réserver</a>
+    </div>
   </header>
 
   <main class="legal">
@@ -123,5 +130,6 @@
   </footer>
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="i18n.js"></script>
 </body>
 </html>
