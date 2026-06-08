@@ -1,0 +1,8 @@
+.DS_Store
+*.log
+node_modules/
+.env
+.env.local
+
+# Source files that shouldn't ship to production
+logo-tmp.png
