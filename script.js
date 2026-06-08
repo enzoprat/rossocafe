@@ -24,21 +24,27 @@ const burger = document.getElementById('burger');
 const navLinks = document.querySelector('.nav-links');
 const navCta = document.querySelector('.nav-cta');
 
+function setNavOpen(isOpen) {
+  navLinks.classList.toggle('open', isOpen);
+  if (navCta) navCta.classList.toggle('open', isOpen);
+  if (burger) burger.classList.toggle('open', isOpen);
+  document.body.classList.toggle('nav-open', isOpen);
+}
+
 if (burger) {
   burger.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
-    if (navCta) navCta.classList.toggle('open', isOpen);
-    burger.classList.toggle('open', isOpen);
+    setNavOpen(!navLinks.classList.contains('open'));
   });
 }
 
-// Close mobile menu after click
-document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    if (navCta) navCta.classList.remove('open');
-    if (burger) burger.classList.remove('open');
-  });
+// Close mobile menu after click on a link or the CTA
+document.querySelectorAll('.nav-links a, .nav-cta').forEach(a => {
+  a.addEventListener('click', () => setNavOpen(false));
+});
+
+// Close on Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && navLinks.classList.contains('open')) setNavOpen(false);
 });
 
 // Reveal on scroll (fade in)

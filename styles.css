@@ -1303,27 +1303,92 @@ h2 em {
 
 /* ============== MOBILE NAV OPEN ============== */
 @media (max-width: 960px) {
+  /* Lock body scroll when menu is open */
+  body.nav-open { overflow: hidden; }
+
+  /* Full-screen overlay */
   .nav-links.open {
     display: flex;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 0;
     left: 0;
     right: 0;
+    bottom: 0;
     flex-direction: column;
-    background: var(--paper);
-    padding: 24px 28px;
-    gap: 20px;
-    border-bottom: 1px solid rgba(179, 58, 44, 0.15);
-    box-shadow: 0 14px 30px -16px rgba(42, 20, 16, 0.25);
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    background: var(--red);
+    z-index: 49;
+    padding: 96px 28px 48px;
+    animation: navSlide 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
+  .nav-links.open::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("assets/img/pattern.png");
+    background-size: 280px;
+    opacity: 0.08;
+    pointer-events: none;
+  }
+  .nav-links.open a {
+    color: var(--cream) !important;
+    font-family: var(--f-display);
+    font-size: 32px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    padding: 8px 0;
+  }
+  .nav-links.open a::after { display: none; }
+  .nav-links.open a:hover {
+    color: var(--mustard) !important;
+  }
+
+  /* CTA inside the overlay */
   .nav-cta.open {
     display: inline-block;
-    position: absolute;
-    top: calc(100% + 220px);
+    position: fixed;
+    bottom: 48px;
     left: 28px;
     right: 28px;
+    background: var(--cream);
+    color: var(--red);
     text-align: center;
+    padding: 18px 28px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    z-index: 50;
+    box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.3);
   }
+
+  /* Burger turns into a close cross when open */
+  .nav-burger.open {
+    z-index: 51;
+    position: relative;
+  }
+  .nav-burger.open span { background: var(--cream) !important; }
+  .nav-burger.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .nav-burger.open span:nth-child(2) { opacity: 0; }
+  .nav-burger.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .nav-burger span {
+    transition: transform 0.3s ease, opacity 0.2s ease;
+  }
+}
+
+@keyframes navSlide {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ============== LEGAL PAGES ============== */
