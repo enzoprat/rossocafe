@@ -126,6 +126,11 @@ window.I18N = {
     'offers.bf.opt2': 'Breakfast of choice<br/>+ 1 coffee or tea<br/>+ 1 juice of choice',
     'offers.opt.label1': 'Option 1',
     'offers.opt.label2': 'Option 2',
+    'offers.tuesday.tag': 'Every Tuesday · From 6PM',
+    'offers.tuesday.script': 'Tuesday',
+    'offers.tuesday.title': 'Cheers<br/>&amp; Bites',
+    'offers.tuesday.desc': 'Buy <strong>1 pint beer</strong><br/>get <strong>1 free hotdog</strong>.',
+    'offers.tuesday.foot': 'Tuesdays · from 6pm',
 
     // Mosaic
     'mosaic.eyebrow': '— Instagram',
@@ -280,6 +285,11 @@ window.I18N = {
     'offers.bf.opt2': 'Breakfast au choix<br/>+ 1 café ou thé<br/>+ 1 jus au choix',
     'offers.opt.label1': 'Option 1',
     'offers.opt.label2': 'Option 2',
+    'offers.tuesday.tag': 'Tous les mardis · dès 18h',
+    'offers.tuesday.script': 'Tuesday',
+    'offers.tuesday.title': 'Cheers<br/>&amp; Bites',
+    'offers.tuesday.desc': '1 pinte achetée<br/>= <strong>1 hot-dog offert</strong>.',
+    'offers.tuesday.foot': 'Mardis · à partir de 18h',
 
     // Mosaic
     'mosaic.eyebrow': '— Instagram',

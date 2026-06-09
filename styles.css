@@ -700,6 +700,12 @@ h2 em {
   gap: 28px;
   margin-top: 56px;
 }
+.offer-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 1100px) {
+  .offer-grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
 .offer-card {
   position: relative;
   border-radius: 22px;
@@ -777,6 +783,45 @@ h2 em {
 .offer-happy .offer-desc {
   font-size: 17px;
   font-weight: 500;
+}
+
+/* Tuesday Cheers & Bites — dark ink */
+.offer-tuesday {
+  background: var(--ink);
+  color: var(--cream);
+}
+.offer-tuesday .offer-tag {
+  background: var(--cream);
+  color: var(--ink);
+}
+.offer-tuesday .offer-script {
+  font-family: var(--f-script);
+  font-size: 52px;
+  line-height: 0.9;
+  color: var(--cream);
+  display: block;
+  margin-bottom: -6px;
+  margin-left: -2px;
+}
+.offer-tuesday h3 {
+  color: var(--cream);
+  font-size: clamp(38px, 4.2vw, 56px);
+  margin-bottom: 28px;
+}
+.offer-tuesday .offer-desc {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: rgba(247, 233, 215, 0.9);
+}
+.offer-tuesday .offer-desc strong {
+  color: var(--mustard);
+  font-weight: 700;
+}
+.offer-tuesday .offer-foot {
+  color: var(--mustard);
+  opacity: 0.85;
+  border-top-color: rgba(247, 233, 215, 0.2);
 }
 
 /* Breakfast — cream */
